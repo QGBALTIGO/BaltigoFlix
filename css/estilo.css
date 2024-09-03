@@ -1,0 +1,186 @@
+/* 
+	Folha realizado primeiro a mobile, telas menores primeiro 
+	
+	*/
+
+.abertura {
+	background-position-x: 50%;
+}
+
+.fundo-gradient {
+	background: url('../img/tv-5837826_1280.jpg') 0 50% / cover no-repeat;
+}
+
+.w3-padding-bottom-64 {
+	padding-bottom: 64px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.margin-left-desktop {
+	margin-left: 0;
+}
+
+/* 
+	Declarações referentes a efeitos do botão do menu de hamburguer.
+	Ela transforma as três barras horizontais em "X" utilizando transform e rotate
+*/
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+	/* Gira a barra horizontal 1 e a posiciona */
+  transform: translate(0, 11px) rotate(-45deg);
+	background-color: #F33;
+}
+
+.change .bar2 {
+	/* Esconde a barra horizontal 2 inutilizada */
+	opacity: 0;
+}
+
+.change .bar3 {
+	/* Gira a barra horizontal 3 e a posiciona */
+  transform: translate(0, -11px) rotate(45deg);
+	background-color: #F33;
+}
+/* Fim das declarações de efeito no botão do menu */
+
+
+/* Declarações referentes ao menu principal*/
+.menu-principal {
+	display: block;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 500;
+	transition: .4s;
+}
+
+/* Declaração utilizada em mobile 
+	Realiza o efeito de trazer o menu a vista do usuário */
+.menu-principal.responsivo {
+	top: 0;
+	transition: .4s;
+}
+
+.menu-principal {
+	/* Menu ficara 40% acima do nível da página por padrão */
+	top: -40%;
+	transition: .4s;
+}
+
+.logo {
+	float:none;
+	text-align:center;
+	display:inline-block;
+	width: 100%;
+}
+
+/* Fim das declarações do menu */
+
+/* Setinha UI para dizer para o usuário prosseguir */
+.anim-seta {
+	animation: setaCimaBaixo .4s infinite alternate linear;
+	position: absolute;
+}
+
+@keyframes setaCimaBaixo {
+	from {
+		top: -100%;
+	}
+	to {
+		top: -60%;
+	}
+}
+
+.abertura {
+	background: url("../img/remote-control-932273_1280.jpg") 50% 0 / cover no-repeat fixed;
+	height: 100vh;
+	align-items: center;
+	display: flex;
+}
+
+.w3-display-bottommiddle-desktop {
+	position:absolute;
+	left: 50%;
+	bottom:0;
+	transform: translate(-50%,0%);
+	-ms-transform: translate(-50%,0%)
+}
+
+footer {
+	text-align: center;
+}
+
+footer nav a {
+	display:block;
+	text-align: center;	
+}
+
+.aciona-wpp {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 1000;
+	padding: 0 13px;
+	transition: .4s;
+}
+
+@media screen and (min-width:600px) {
+	.margin-left-desktop {
+		margin-left: 16px;
+	}
+	
+	.menu-btn {
+		display: none;
+	}
+	
+	.menu-principal {
+		top: 0;
+	}
+	
+	.logo {
+		float:right;
+		text-align:left;
+		display:inline-block;
+		width: auto;
+	}
+	
+	.abertura {
+		background-position-y: 100%;
+		background-position-x: 0;
+	}
+	
+	.display-flex-texto-com-imagem {
+		display: flex;
+	}
+
+	.display-flex-texto-com-imagem > div {
+		flex-basis: 50%;
+	}
+	
+	.w3-display-container-desktop {
+		position: relative;
+	}
+	
+	footer {
+		text-align: left;	
+	}
+	
+	footer nav a {
+		text-align: left;	
+	}
+	
+	.aciona-wpp { 
+		right: 3%;
+		bottom: 5%;
+	}
+}
