@@ -130,7 +130,9 @@ footer nav a {
 	right: 20px;
 	bottom: 20px;
 	z-index: 1000;
-	padding: 15px;
+	height: 60px;
+	width: 60px;
+	padding: 0;
 	transition: .4s;
 }
 
