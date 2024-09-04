@@ -4,8 +4,14 @@
 	*/
 
 .abertura {
-	background-position-x: 50%;
+	background: rgba(0,0,0,0.5) url("../img/remote-control-932273_1280.jpg") 50% 0 / cover no-repeat fixed;
+	background-blend-mode: color-dodge;
 	height: 100vh;
+}
+
+.abertura {
+	align-items: center;
+	display: flex;
 }
 
 .fundo-gradient {
@@ -102,13 +108,6 @@ body {
 	}
 }
 
-.abertura {
-	background: url("../img/remote-control-932273_1280.jpg") 50% 0 / cover no-repeat fixed;
-	height: 100vh;
-	align-items: center;
-	display: flex;
-}
-
 .w3-display-bottommiddle-desktop {
 	position:absolute;
 	left: 50%;
@@ -128,8 +127,8 @@ footer nav a {
 
 .aciona-wpp {
 	position: fixed;
-	right: 20px;
-	bottom: 20px;
+	right: 28px;
+	bottom: 28px;
 	z-index: 1000;
 	height: 60px;
 	width: 60px;
@@ -138,6 +137,11 @@ footer nav a {
 }
 
 @media screen and (min-width:600px) {
+	.abertura {
+		background-position-y: 100%;
+		background-position-x: 0;
+	}
+	
 	.margin-left-desktop {
 		margin-left: 16px;
 	}
@@ -155,11 +159,6 @@ footer nav a {
 		text-align:left;
 		display:inline-block;
 		width: auto;
-	}
-	
-	.abertura {
-		background-position-y: 100%;
-		background-position-x: 0;
 	}
 	
 	.display-flex-texto-com-imagem {
