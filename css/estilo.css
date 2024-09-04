@@ -89,6 +89,7 @@ body {
 	text-align:center;
 	display:inline-block;
 	width: 100%;
+	height:48px;
 }
 
 /* Fim das declarações do menu */
@@ -125,11 +126,15 @@ footer nav a {
 	text-align: center;	
 }
 
+.accordionButton {
+	font-weight: bold;
+}
+
 .aciona-wpp {
 	position: fixed;
 	right: 28px;
 	bottom: 28px;
-	z-index: 100;
+	z-index: 150;
 	height: 60px;
 	width: 60px;
 	padding: 0;
@@ -159,6 +164,7 @@ footer nav a {
 		text-align:left;
 		display:inline-block;
 		width: auto;
+		height: auto;
 	}
 	
 	.display-flex-texto-com-imagem {
