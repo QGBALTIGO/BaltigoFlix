@@ -1,4 +1,4 @@
-html lang="pt-BR">
+<html lang="pt-BR">
 	<head>
 		<title>BaltigoFlix - Confira as melhores ofertas aqui</title>
 		<meta charset="UTF-8">
@@ -59,11 +59,28 @@ html lang="pt-BR">
     </div>
 </main>
 				
-				<div class="w3-display-bottommiddle-desktop" style="z-index:10;">
-					<span class="w3-block w3-xlarge anim-seta"><i class="fa-solid fa-arrow-down"></i></span>
-					<p><b>Continue navegando</b></p>
-				</div>
-			</div>
+				<!-- Setas de navegação -->
+<div class="w3-display-bottommiddle-desktop" style="z-index:10; text-align: center;">
+    <div class="anim-seta" style="display: inline-block; animation: bounce 1.5s infinite;">
+        <i class="fa-solid fa-arrow-down" style="color: white; font-size: 24px;"></i>
+    </div>
+    <p style="color: white; font-size: 16px; margin-top: 10px;"><b>Continue navegando</b></p>
+</div>
+
+<!-- Estilo da animação -->
+<style>
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+</style>
 			<!-- Fim seção abertura/"capa" da página --> 
 			
 			
