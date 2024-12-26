@@ -8,15 +8,30 @@
 		<link rel="stylesheet" href="css/estilo.css">
 		<script src="https://kit.fontawesome.com/f492772e4b.js" crossorigin="anonymous"></script>
 		<script src="js/script.js" type="module"></script>
+		<style>
+			/* Estilos para a imagem de fundo */
+			.abertura {
+				background-image: url('https://i.postimg.cc/WpFHPKMv/C-pia-de-Banner-para-twitch-aviso-de-fim-de-live-moderno-vermelho.png');
+				background-size: cover;
+				background-position: center;
+				height: 100vh; /* Faz a imagem ocupar toda a altura da tela */
+				position: relative;
+			}
+			/* Estilo para a logo */
+			.logo img {
+				position: absolute;
+				top: 20px; /* Ajuste a distância do topo conforme necessário */
+				left: 20px; /* Ajuste a distância da esquerda conforme necessário */
+				width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+			}
+		</style>
 	</head>
 	<body id="inicio" class="w3-ios-background">
-		<!-- <button type="button" id="menuBtn" class="w3-button w3-margin w3-display-topright w3-xxlarge w3-text-white menu-btn" style="z-index:1000;position:fixed;"><i class="fa-solid fa-bars"></i></button>-->
-		
-		<a href="https://wa.me/595992820210" class="w3-button w3-circle w3-ios-green w3-xxlarge w3-card aciona-wpp">
+		<a href="https://wa.me/595992820210" class="w3-button w3-circle w3-ios-green w3-xxlarge w3-card aciona-wpp" style="position: fixed; bottom: 20px; right: 20px;">
 			<i class="fa-brands fa-whatsapp"></i>
 		</a>
 		
-		<div class="w3-button w3-margin w3-display-topright w3-xxlarge menu-btn w3-hover-none" style=";position:fixed;z-index:1000;padding-top: 15px;padding-bottom: 15px;background: rgba(0,0,0,0)" id="menuBtn">
+		<div class="w3-button w3-margin w3-display-topright w3-xxlarge menu-btn w3-hover-none" style="position:fixed; z-index:1000; padding-top: 15px; padding-bottom: 15px; background: rgba(0,0,0,0)" id="menuBtn">
 			<div class="w3-overlay w3-show w3-display-topleft w3-round-large" style="z-index:900"></div>
 			<div class="bar1 bars w3-round-small w3-ios-background" style="position:relative;z-index:1000"></div>
 			<div class="bar2 bars w3-round-small w3-ios-background" style="position:relative;z-index:1000"></div>
@@ -37,20 +52,21 @@
 		</nav>
 		<!-- Fim menu de navegação -->
 		
-		<<main>
-    <!-- Início da seção de "capa" da página -->
-    <div class="abertura w3-display-container-desktop w3-text-white w3-center">
-        <div class="w3-content w3-container w3-display-container-desktop" style="z-index:10; margin-top:-50px; padding-bottom: 30px;">
-
-            <!-- Imagem ajustada -->
-            <img src="https://i.postimg.cc/WpFHPKMv/C-pia-de-Banner-para-twitch-aviso-de-fim-de-live-moderno-vermelho.png" class="w3-image"
-            
-            <!-- Título ajustado -->
-            <h1 style="font-size: 28px; margin-bottom: 20px;"><strong>Aproveite milhares de conteúdos com toda a sua família.</strong></h1>
-            
-            <!-- Texto de descrição -->
-            <p style="margin-bottom: 30px;">Assista em qualquer dispositivo, incluindo smart tv, tv box, chromecast, celular ou computador. Desfrute de um vasto conteúdo em um único lugar.</p>
-            
+		<main>
+			<!-- Início da seção de "capa" da página -->
+			<div class="abertura w3-display-container-desktop w3-text-white w3-center">
+				<div class="w3-content w3-container w3-display-container-desktop" style="z-index:10; margin-top:-50px; padding-bottom: 30px;">
+					
+					<!-- Título ajustado -->
+					<h1 style="font-size: 28px; margin-bottom: 20px;"><strong>Aproveite milhares de conteúdos com toda a sua família.</strong></h1>
+					
+					<!-- Texto de descrição -->
+					<p style="margin-bottom: 30px;">Assista em qualquer dispositivo, incluindo smart tv, tv box, chromecast, celular ou computador. Desfrute de um vasto conteúdo em um único lugar.</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
             <!-- Botão -->
             <a href="https://app.monetizze.com.br/" class="w3-button w3-btn w3-padding-large w3-round-xxlarge" style="transition:.3s;background-color: #FF0000;">
                 <strong>Adquira Já</strong>
