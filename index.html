@@ -23,7 +23,44 @@
 			<div class="bar2 bars w3-round-small w3-ios-background" style="position:relative;z-index:1000"></div>
 			<div class="bar3 bars w3-round-small w3-ios-background" style="position:relative;z-index:1000"></div>
 		</div>
-		
+		/* Adiciona rolagem suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Imagem de fundo com 30% de opacidade, encaixada e discreta */
+        body {
+            background-image: url('https://i.postimg.cc/63KD4Wrn/IMG-5114.jpg');
+            background-size: cover; /* Ajusta para cobrir toda a tela */
+            background-position: center; /* Centraliza a imagem */
+            background-attachment: fixed; /* Mantém a imagem fixa enquanto rola a página */
+            height: 100vh; /* Preenche a tela inteira */
+            position: relative;
+        }
+
+        /* Pseudo-elemento para aplicar opacidade na imagem de fundo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.15); /* Opacidade suave de 15% */
+            z-index: -1; /* Garante que a imagem de fundo não sobreponha o conteúdo */
+        }
+
+        /* Estilo da seção */
+        #plans {
+            margin-top: 100px; /* Dando espaço ao topo */
+            padding: 50px;
+            background-color: rgba(242, 242, 242, 0.9); /* Fundo branco com transparência */
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
 		<!-- Menu de navegação -->
 		<div class="w3-overlay w3-animate-opacity w3-top" id="fundoMenu" style="z-index:300;height:100%"></div>
 		<nav class="w3-bar w3-black menu-principal" id="menu">
