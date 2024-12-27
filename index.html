@@ -48,52 +48,47 @@
 		<!-- Fim menu de navegação -->
 		
 		<main>
-    <!-- Início da seção de "capa" da página -->
-			    #segunda-secao {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://i.postimg.cc/63KD4Wrn/IMG-5114.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 50vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+            <!-- Início da seção de "capa" da página -->
+<div class="abertura w3-display-container-desktop w3-text-white w3-center" style="position: relative; overflow: hidden;">
+    <!-- Imagem de fundo -->
+    <div style="
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                          url('https://i.postimg.cc/63KD4Wrn/IMG-5114.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    "></div>
 
-    /* Ajuste responsivo */
-    @media (max-width: 768px) {
-      #segunda-secao {
-        height: 30vh;
-    <div class="abertura w3-display-container-desktop w3-text-white w3-center">
-        <div class="w3-content w3-container w3-display-container-desktop" style="z-index:10; margin-top:-100px; padding-bottom: 30px;">
+    <!-- Conteúdo da seção -->
+    <div class="w3-content w3-container w3-display-container-desktop" style="z-index: 2; position: relative; margin-top: -100px; padding-bottom: 30px;">
+        <!-- Imagem ajustada -->
+        <img src="https://i.postimg.cc/VsGZMg46/IMG-5113.png" class="w3-image" alt="Logo">
 
-            <!-- Imagem ajustada -->
-		</head>
-            <img src="https://i.postimg.cc/VsGZMg46/IMG-5113.png" class="w3-image"
-            
-            <!-- Título ajustado -->
-            <h1 style="font-size: 28px; margin-bottom: 20px;"><strong>Desfrute de um universo infinito de entretenimento para toda a família!</strong></h1>
-            
-            <!-- Texto de descrição -->
-            <p style="margin-bottom: 30px;">Assista a qualquer hora e em qualquer lugar, seja na Smart TV, TV Box, Chromecast, celular ou computador. Tudo o que você ama, em um só lugar.</p>
-</html>
-            <!-- Botão -->
-<a href="#plans" class="w3-button w3-btn w3-padding-large w3-round-xxlarge" style="transition:.3s;background-color: #FF0000;">
-        <strong>Adquira Já</strong>
-    </a>
-            </a>
-</main>
-				
-				<!-- Setas de navegação -->
-<div class="w3-display-bottommiddle-desktop" style="z-index:10; text-align: center;">
-    <div class="anim-seta" style="display: inline-block; animation: bounce 1.5s infinite; margin-bottom: -5px;">
-        <i class="fa-solid fa-arrow-down" style="color: white; font-size: 24px;"></i>
+        <!-- Título ajustado -->
+        <h1 style="font-size: 28px; margin-bottom: 20px;"><strong>Desfrute de um universo infinito de entretenimento para toda a família!</strong></h1>
+
+        <!-- Texto de descrição -->
+        <p style="margin-bottom: 30px;">Assista a qualquer hora e em qualquer lugar, seja na Smart TV, TV Box, Chromecast, celular ou computador. Tudo o que você ama, em um só lugar.</p>
+
+        <!-- Botão -->
+        <a href="#plans" class="w3-button w3-btn w3-padding-large w3-round-xxlarge" style="transition: .3s; background-color: #FF0000;">
+            <strong>Adquira Já</strong>
+        </a>
     </div>
-    <p style="color: white; font-size: 16px; margin-top: 35px;"><b>Continue navegando</b></p>
+
+    <!-- Setas de navegação -->
+    <div class="w3-display-bottommiddle-desktop" style="z-index: 2; text-align: center; position: relative;">
+        <div class="anim-seta" style="display: inline-block; animation: bounce 1.5s infinite; margin-bottom: -5px;">
+            <i class="fa-solid fa-arrow-down" style="color: white; font-size: 24px;"></i>
+        </div>
+        <p style="color: white; font-size: 16px; margin-top: 35px;"><b>Continue navegando</b></p>
+    </div>
 </div>
 
 <!-- Estilo da animação -->
@@ -110,6 +105,7 @@
     }
 }
 </style>
+<!-- Fim seção abertura/"capa" da página -->
 			<!-- Fim seção abertura/"capa" da página --> 
 			
 			
