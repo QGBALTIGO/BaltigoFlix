@@ -42,7 +42,6 @@
 				<a href="#plans" class="w3-button w3-bar-item w3-mobile w3-large" style="transition:.3s">Planos</a>
 				<a href="#faq" class="w3-button w3-bar-item w3-mobile w3-large" style="transition:.3s">FAQ</a>
 				<span class="w3-right w3-padding w3-large logo">
-					<img src="https://i.postimg.cc/MZ5bNmLS/C-pia-de-Banner-para-twitch-aviso-de-fim-de-live-moderno-vermelho.jpg" class="w3-image">
 					<img src="https://i.postimg.cc/pVkdfZWh/IMG-5123.png" class="w3-image">
 				</span>
 			</div>
@@ -51,23 +50,24 @@
 
 		<main>
     <!-- Início da seção de "capa" da página -->
-			<!-- Imagem de fundo escurecida e centralizada -->
-<div style="
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                      url('https://i.postimg.cc/63KD4Wrn/IMG-5114.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-"></div>
-    <div class="abertura w3-display-container-desktop w3-text-white w3-center">
-        <div class="w3-content w3-container w3-display-container-desktop" style="z-index:10; margin-top:-100px; padding-bottom: 30px;">
+<div class="abertura w3-display-container-desktop w3-text-white w3-center" style="position: relative; overflow: hidden;">
+    <!-- Imagem de fundo -->
+    <div style="
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                          url('https://i.postimg.cc/63KD4Wrn/IMG-5114.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    "></div>
 
+    <!-- Conteúdo da seção -->
+    <div class="w3-content w3-container w3-display-container-desktop" style="z-index: 2; position: relative; margin-top: -100px; padding-bottom: 30px;">
             <!-- Imagem ajustada -->
             <img src="https://i.postimg.cc/VsGZMg46/IMG-5113.png" class="w3-image"
 
@@ -83,7 +83,6 @@
     </a>
             </a>
 </main>
-
 				<!-- Setas de navegação -->
 <div class="w3-display-bottommiddle-desktop" style="z-index:10; text-align: center;">
     <div class="anim-seta" style="display: inline-block; animation: bounce 1.5s infinite; margin-bottom: -5px;">
