@@ -4,21 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>BaltigoFlix - Confira as melhores ofertas aqui</title>
-
-  <!-- Links para os estilos (CSS) -->
+  
+  <!-- Links para estilos -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-ios.css">
-  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    /* Estilo para a seção inicial */
+    #inicio {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://i.postimg.cc/63KD4Wrn/IMG-5114.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-  <!-- Ícones FontAwesome -->
-  <script src="https://kit.fontawesome.com/f492772e4b.js" crossorigin="anonymous"></script>
+    /* Ajuste responsivo */
+    @media (max-width: 768px) {
+      #inicio {
+        height: 40vh;
+      }
+    }
 
-  <!-- Scripts externos -->
-  <script src="js/script.js" type="module" defer></script>
+    /* Estilo para o texto */
+    #inicio h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    #inicio p {
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- Conteúdo do site -->
+  <!-- Seção inicial com a imagem de fundo -->
+  <section id="inicio">
+    <div class="conteudo">
+      <h1>BaltigoFlix</h1>
+      <p>Confira as melhores ofertas aqui!</p>
+    </div>
+  </section>
 
+  <!-- Conteúdo restante do site -->
+  <div class="w3-container">
+    <p>Bem-vindo ao BaltigoFlix! Aproveite nossos conteúdos incríveis e explore o melhor do entretenimento.</p>
+  </div>
 </body>
 </html>
 		<!-- <button type="button" id="menuBtn" class="w3-button w3-margin w3-display-topright w3-xxlarge w3-text-white menu-btn" style="z-index:1000;position:fixed;"><i class="fa-solid fa-bars"></i></button>-->
@@ -42,7 +78,7 @@
 				<a href="#plans" class="w3-button w3-bar-item w3-mobile w3-large" style="transition:.3s">Planos</a>
 				<a href="#faq" class="w3-button w3-bar-item w3-mobile w3-large" style="transition:.3s">FAQ</a>
 				<span class="w3-right w3-padding w3-large logo">
-					<img src="https://i.postimg.cc/pVkdfZWh/IMG-5123.png" class="w3-image">
+					<img src="https://i.postimg.cc/RZ1fzt1c/IMG-5123.png" class="w3-image">
 				</span>
 			</div>
 		</nav>
