@@ -1586,6 +1586,66 @@ fbq('track', 'PageView');
 <noscript><img loading="lazy" height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=8491355657655152&ev=PageView&noscript=1"
 /></noscript>
+
+					<script>
+(function () {
+  const planByCheckout = {
+    "9snqsP3": "mensal",
+    "3fsy24d": "trimestral",
+    "32ocvxm": "semestral",
+    "u9wz86m": "anual"
+  };
+
+  const currentParams = new URLSearchParams(window.location.search);
+  const fields = ["ref", "tg_id", "source"];
+
+  fields.forEach((field) => {
+    const value = currentParams.get(field);
+    if (value) localStorage.setItem("baltigoflix_" + field, value);
+  });
+
+  const ref = currentParams.get("ref") || localStorage.getItem("baltigoflix_ref");
+  const tgId = currentParams.get("tg_id") || localStorage.getItem("baltigoflix_tg_id");
+  const source = currentParams.get("source") || localStorage.getItem("baltigoflix_source") || "anime_offline";
+
+  if (!ref) return;
+
+  document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach((link) => {
+    const checkoutUrl = new URL(link.href);
+    let plan = "";
+
+    Object.keys(planByCheckout).forEach((checkoutId) => {
+      if (checkoutUrl.href.includes(checkoutId)) {
+        plan = planByCheckout[checkoutId];
+      }
+    });
+
+    checkoutUrl.searchParams.set("ref", ref);
+    checkoutUrl.searchParams.set("external_reference", ref);
+    checkoutUrl.searchParams.set("utm_content", ref);
+    checkoutUrl.searchParams.set("sck", ref);
+    checkoutUrl.searchParams.set("utm_source", "anime_bot");
+    checkoutUrl.searchParams.set("utm_medium", "telegram");
+    checkoutUrl.searchParams.set("utm_campaign", "offline_download");
+    checkoutUrl.searchParams.set("source", source);
+
+    if (tgId) checkoutUrl.searchParams.set("tg_id", tgId);
+    if (plan) checkoutUrl.searchParams.set("plan", plan);
+
+    link.href = checkoutUrl.toString();
+
+    link.addEventListener("click", function () {
+      if (typeof fbq === "function") {
+        fbq("trackCustom", "AnimeOfflineCheckoutClick", {
+          plan: plan || "desconhecido",
+          ref: ref
+        });
+      }
+    });
+  });
+})();
+</script>
+
 <!-- End Meta Pixel Code -->				</div>
 				</div>
 					</div>
