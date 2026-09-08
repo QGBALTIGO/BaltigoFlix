@@ -74,7 +74,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-site-blocks :focus){outline-width:2px;outline-style:solid}.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child){margin-bottom:3px}.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content{outline-offset:4px}.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content{outline-offset:0}blockquote,caption,figcaption,h1,h2,h3,h4,h5,h6,p{text-wrap:pretty}.more-link{display:block}:where(pre){overflow-x:auto}
 /*# sourceURL=https://fireplaytv.com/wp-content/themes/twentytwentyfive/style.min.css */
 </style>
-<link rel='stylesheet' id='formlayer-frontend-css' href='https://fireplaytv.com/wp-content/plugins/formlayer/assets/css/frontend.css?ver=1.0.3' media='all' />
 <link rel='stylesheet' id='elementor-frontend-css' href='https://fireplaytv.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.31.5' media='all' />
 <link rel='stylesheet' id='elementor-post-5-css' href='https://fireplaytv.com/wp-content/uploads/elementor/css/post-5.css?ver=1779290687' media='all' />
 <link rel='stylesheet' id='widget-image-css' href='https://fireplaytv.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.31.5' media='all' />
@@ -95,7 +94,6 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 <meta name="generator" content="WordPress 6.9.4" />
 <link rel='shortlink' href='https://fireplaytv.com/' />
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://server.fireplaytv.com/dgp1nnwtdfsxg.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','7=DhxOITA5WlstTj43VjxOSBFFQUhVUhMAWh4aFAEEGw8eDAVIBxsa');</script>
 <!-- End Google Tag Manager --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"streaming","description":"Oficial","url":"https://fireplaytv.com","inLanguage":"pt_BR","@id":"https://fireplaytv.com#website"},{"@type":"WebPage","name":"BaltigoFlix Oficial","url":"https://fireplaytv.com/","description":"VER PLANOS Tudo o que você ama assistir. Em um só lugar! Assista aos maiores canais, filmes, séries e eventos ao vivo com estabilidade, fluidez e uma...","inLanguage":"pt_BR","@id":"https://fireplaytv.com/#webpage"},{"@type":"BreadcrumbList","@id":"https://fireplaytv.com/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://fireplaytv.com","name":"Home"}},{"@type":"ListItem","position":3,"item":{"@id":"https://fireplaytv.com/","name":"BaltigoFlix Oficial"}}]},{"@type":"SearchAction","@id":"https://fireplaytv.com#searchaction","target":"https://fireplaytv.com/?s={search_term_string}","query-input":"required name=search_term_string"}]}</script>
 <meta name="generator" content="Elementor 3.31.5; features: e_font_icon_svg, additional_custom_breakpoints, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap">
 			<style>
@@ -124,10 +122,43 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 <link rel="icon" href="https://fireplaytv.com/wp-content/uploads/2026/05/cropped-Sem-Titulo-1-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://fireplaytv.com/wp-content/uploads/2026/05/cropped-Sem-Titulo-1-180x180.png" />
 <meta name="msapplication-TileImage" content="https://fireplaytv.com/wp-content/uploads/2026/05/cropped-Sem-Titulo-1-270x270.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<link rel="preconnect" href="https://fireplaytv.com" crossorigin>
+	<link rel="preconnect" href="https://i.postimg.cc" crossorigin>
+	<style id="baltigoflix-stability-fixes">
+		html, body { overflow-x: clip; }
+		.elementor-175 .elementor-element.elementor-element-33acb050 {
+			position: fixed !important;
+			top: 0 !important;
+			left: 0 !important;
+			right: 0 !important;
+			width: 100% !important;
+			z-index: 10000 !important;
+			box-sizing: border-box;
+			padding-top: calc(20px + env(safe-area-inset-top, 0px));
+		}
+		.baltigo-video {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			aspect-ratio: 16 / 9;
+			margin: 0 auto;
+			border: 0;
+			border-radius: 12px;
+			background: #000;
+			object-fit: cover;
+		}
+		@media (max-width: 767px) {
+			.elementor-175 .elementor-element.elementor-element-33acb050 {
+				padding-top: calc(14px + env(safe-area-inset-top, 0px));
+				padding-bottom: 14px;
+			}
+		}
+	</style>
+</head>
 <body class="home wp-singular page-template page-template-elementor_canvas page page-id-175 wp-embed-responsive wp-theme-twentytwentyfive elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-175">
 			<div data-elementor-type="wp-page" data-elementor-id="175" class="elementor elementor-175" data-elementor-post-type="page">
-				<div class="elementor-element elementor-element-33acb050 e-flex e-con-boxed e-con e-parent" data-id="33acb050" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;position&quot;:&quot;fixed&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
+				<div class="elementor-element elementor-element-33acb050 e-flex e-con-boxed e-con e-parent" data-id="33acb050" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-3d37d5b1 elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="3d37d5b1" data-element_type="widget" data-widget_type="image.default">
 															<img fetchpriority="high" decoding="async" width="946" height="295" src="https://i.postimg.cc/Jh6MTV1D/Chat-GPT-Image-20-de-mai-de-2026-18-41-03.png" class="attachment-large size-large wp-image-36" alt="" srcset="https://i.postimg.cc/Jh6MTV1D/Chat-GPT-Image-20-de-mai-de-2026-18-41-03.png 946w, https://fireplaytv.com/wp-content/uploads/2026/05/LOGO-300x94.webp 300w, https://fireplaytv.com/wp-content/uploads/2026/05/LOGO-768x239.webp 768w" sizes="(max-width: 946px) 100vw, 946px" />															</div>
@@ -144,13 +175,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-781fc52 elementor-widget elementor-widget-html" data-id="781fc52" data-element_type="widget" data-widget_type="html.default">
 					<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/0a2d9476-0aa9-4aa5-9886-35157402e87d/players/6a0df04cb72dc7b13bac31c3/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/0a2d9476-0aa9-4aa5-9886-35157402e87d/6a0deff117c81ae27f59fd32/main.m3u8" as="fetch">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://license.vturb.com">				</div>
+				</div>
 		<div class="elementor-element elementor-element-da63126 e-con-full e-flex e-con e-child" data-id="da63126" data-element_type="container">
 				<div class="elementor-element elementor-element-73de1f76 elementor-widget elementor-widget-heading" data-id="73de1f76" data-element_type="widget" data-widget_type="heading.default">
 					<h2 class="elementor-heading-title elementor-size-default"><span class="destaque1">Tudo o que você ama assistir. Em um só lugar!</h2>				</div>
@@ -205,34 +230,34 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 					<!-- Carrossel 1 - normal -->
 <div class="logo-carousel">
   <div class="logos-track track-normal">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/TELECINE.webp" alt="Logo ">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/SKY.webp" alt="Logo 3">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp" alt="Logo 4">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PREMIERE.webp" alt="Logo 5">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp" alt="Logo 6">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MAX.webp" alt="Logo 7">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/GLOBOPLAY.webp" alt="Logo 8">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/DISNEY.webp" alt="Logo 9">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CRUNCHROLL.webp" alt="Logo 10">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/COMBATE.webp" alt="Logo 11">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CLARO-TV.webp" alt="Logo 12">
-     <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/APPLE-TV.webp" alt="Logo 12">
-      <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Paramount-scaled.png" alt="Logo 12">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/TELECINE.webp" alt="Logo ">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/SKY.webp" alt="Logo 3">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp" alt="Logo 4">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PREMIERE.webp" alt="Logo 5">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp" alt="Logo 6">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MAX.webp" alt="Logo 7">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/GLOBOPLAY.webp" alt="Logo 8">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/DISNEY.webp" alt="Logo 9">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CRUNCHROLL.webp" alt="Logo 10">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/COMBATE.webp" alt="Logo 11">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CLARO-TV.webp" alt="Logo 12">
+     <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/APPLE-TV.webp" alt="Logo 12">
+      <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Paramount-scaled.png" alt="Logo 12">
     
     <!-- Duplicação para loop contínuo -->
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/TELECINE.webp" alt="Logo ">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/SKY.webp" alt="Logo 3">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp" alt="Logo 4">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PREMIERE.webp" alt="Logo 5">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp" alt="Logo 6">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MAX.webp" alt="Logo 7">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/GLOBOPLAY.webp" alt="Logo 8">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/DISNEY.webp" alt="Logo 9">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CRUNCHROLL.webp" alt="Logo 10">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/COMBATE.webp" alt="Logo 11">
-    <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CLARO-TV.webp" alt="Logo 12">
-     <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/APPLE-TV.webp" alt="Logo 12">
-      <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Paramount-scaled.png" alt="Logo 12">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/TELECINE.webp" alt="Logo ">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/SKY.webp" alt="Logo 3">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp" alt="Logo 4">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/PREMIERE.webp" alt="Logo 5">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp" alt="Logo 6">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MAX.webp" alt="Logo 7">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/GLOBOPLAY.webp" alt="Logo 8">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/DISNEY.webp" alt="Logo 9">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CRUNCHROLL.webp" alt="Logo 10">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/COMBATE.webp" alt="Logo 11">
+    <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/CLARO-TV.webp" alt="Logo 12">
+     <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/APPLE-TV.webp" alt="Logo 12">
+      <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Paramount-scaled.png" alt="Logo 12">
   </div>
 </div>
 
@@ -323,7 +348,10 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 					<h2 class="elementor-heading-title elementor-size-default">Confira como a <span class="destaque1">BaltigoFlix</span> Funciona!</h2>				</div>
 		<div class="elementor-element elementor-element-2996a0d2 e-con-full e-flex e-con e-child" data-id="2996a0d2" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
 				<div class="elementor-element elementor-element-75bd5f6 elementor-widget elementor-widget-html" data-id="75bd5f6" data-element_type="widget" data-widget_type="html.default">
-					<vturb-smartplayer id="vid-6a0df04cb72dc7b13bac31c3" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/0a2d9476-0aa9-4aa5-9886-35157402e87d/players/6a0df04cb72dc7b13bac31c3/v4/player.js", s.async=!0,document.head.appendChild(s); </script>				</div>
+					<video class="baltigo-video" controls playsinline preload="none" aria-label="Demonstração da BaltigoFlix">
+						<source src="videos/depoimento1.mp4" type="video/mp4">
+						Seu navegador não conseguiu reproduzir o vídeo.
+					</video>				</div>
 		<div class="elementor-element elementor-element-5f259402 e-con-full e-flex e-con e-child" data-id="5f259402" data-element_type="container">
 				<div class="elementor-element elementor-element-4a896d83 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-text-editor" data-id="4a896d83" data-element_type="widget" data-widget_type="text-editor.default">
 									<p class="text-[14px] md:text-[18px] font-semibold">O pacote completo de entretenimento: canais ao vivo, filmes, séries e os streamings que você mais gosta.</p>								</div>
@@ -343,50 +371,50 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
   <div class="fire-row">
     <div class="fire-track fire-left">
       <div class="fire-set">
-          <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Michael_filme_2026.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ppRmgI2MbEOADvKKvlNoRJHPXOT.jpg">
-        <img src=https://image.tmdb.org/t/p/w500/2i8uru7rlbHKaoIbC2V4FZLT7uW.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/7FBnCkYzHlVHEtuzTEiGgFhs8EQ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/b3WeTp42eJSRuE4UZfyPCOJW4c.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ubN87iHY2DyWtwU2JHS0SQ1KqJu.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/fwaioeouE89lrcnckfluzIKMwSu.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/mBcYPIubRBPTnTwWdj8OuEC1NHJ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/hXNn25hE2SH2kHMPVOLjqDISSxf.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/grIFQLXXwQmjvYYfXVXCgGTMUWw.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/4nW5X9iBrMlHMDcTsEOQWXKu3TZ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/k8LWWuusn3xQ4xzx6zVyixBI2TH.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/l2OwwZBGZxJDWRglKqbFhx7Eok.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/9k2zKeUfcKkAz1dGt5MP6dZMm4G.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/gkHNa8q3RNhgj2EMuoYWJUHsMa6.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/mvGem9E8avZEg33F9csGHGBT7kM.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/l08o8b3NAPxDzJca9ZF0fdQvbaz.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/7NrvUI3vnW8H3rD7ExKcTL7KRcQ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ftPFJBGbldoWiiPrmesW96zBzdH.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/iMJaRPY4xx4lScIaIWd67yWJuqc.jpg">
+          <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Michael_filme_2026.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ppRmgI2MbEOADvKKvlNoRJHPXOT.jpg">
+        <img loading="lazy" fetchpriority="low" src=https://image.tmdb.org/t/p/w500/2i8uru7rlbHKaoIbC2V4FZLT7uW.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/7FBnCkYzHlVHEtuzTEiGgFhs8EQ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/b3WeTp42eJSRuE4UZfyPCOJW4c.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ubN87iHY2DyWtwU2JHS0SQ1KqJu.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/fwaioeouE89lrcnckfluzIKMwSu.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/mBcYPIubRBPTnTwWdj8OuEC1NHJ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/hXNn25hE2SH2kHMPVOLjqDISSxf.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/grIFQLXXwQmjvYYfXVXCgGTMUWw.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/4nW5X9iBrMlHMDcTsEOQWXKu3TZ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/k8LWWuusn3xQ4xzx6zVyixBI2TH.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/l2OwwZBGZxJDWRglKqbFhx7Eok.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/9k2zKeUfcKkAz1dGt5MP6dZMm4G.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/gkHNa8q3RNhgj2EMuoYWJUHsMa6.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/mvGem9E8avZEg33F9csGHGBT7kM.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/l08o8b3NAPxDzJca9ZF0fdQvbaz.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/7NrvUI3vnW8H3rD7ExKcTL7KRcQ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ftPFJBGbldoWiiPrmesW96zBzdH.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/iMJaRPY4xx4lScIaIWd67yWJuqc.jpg">
         
       </div>
 
       <div class="fire-set" aria-hidden="true">
-      <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Michael_filme_2026.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ppRmgI2MbEOADvKKvlNoRJHPXOT.jpg">
-        <img src=https://image.tmdb.org/t/p/w500/2i8uru7rlbHKaoIbC2V4FZLT7uW.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/7FBnCkYzHlVHEtuzTEiGgFhs8EQ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/b3WeTp42eJSRuE4UZfyPCOJW4c.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ubN87iHY2DyWtwU2JHS0SQ1KqJu.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/fwaioeouE89lrcnckfluzIKMwSu.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/mBcYPIubRBPTnTwWdj8OuEC1NHJ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/hXNn25hE2SH2kHMPVOLjqDISSxf.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/grIFQLXXwQmjvYYfXVXCgGTMUWw.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/4nW5X9iBrMlHMDcTsEOQWXKu3TZ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/k8LWWuusn3xQ4xzx6zVyixBI2TH.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/l2OwwZBGZxJDWRglKqbFhx7Eok.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/9k2zKeUfcKkAz1dGt5MP6dZMm4G.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/gkHNa8q3RNhgj2EMuoYWJUHsMa6.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/mvGem9E8avZEg33F9csGHGBT7kM.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/l08o8b3NAPxDzJca9ZF0fdQvbaz.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/7NrvUI3vnW8H3rD7ExKcTL7KRcQ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ftPFJBGbldoWiiPrmesW96zBzdH.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/iMJaRPY4xx4lScIaIWd67yWJuqc.jpg">
+      <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Michael_filme_2026.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ppRmgI2MbEOADvKKvlNoRJHPXOT.jpg">
+        <img loading="lazy" fetchpriority="low" src=https://image.tmdb.org/t/p/w500/2i8uru7rlbHKaoIbC2V4FZLT7uW.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/7FBnCkYzHlVHEtuzTEiGgFhs8EQ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/b3WeTp42eJSRuE4UZfyPCOJW4c.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ubN87iHY2DyWtwU2JHS0SQ1KqJu.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/fwaioeouE89lrcnckfluzIKMwSu.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/mBcYPIubRBPTnTwWdj8OuEC1NHJ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/hXNn25hE2SH2kHMPVOLjqDISSxf.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/grIFQLXXwQmjvYYfXVXCgGTMUWw.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/4nW5X9iBrMlHMDcTsEOQWXKu3TZ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/k8LWWuusn3xQ4xzx6zVyixBI2TH.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/l2OwwZBGZxJDWRglKqbFhx7Eok.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/9k2zKeUfcKkAz1dGt5MP6dZMm4G.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/gkHNa8q3RNhgj2EMuoYWJUHsMa6.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/mvGem9E8avZEg33F9csGHGBT7kM.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/l08o8b3NAPxDzJca9ZF0fdQvbaz.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/7NrvUI3vnW8H3rD7ExKcTL7KRcQ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ftPFJBGbldoWiiPrmesW96zBzdH.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/iMJaRPY4xx4lScIaIWd67yWJuqc.jpg">
       </div>
     </div>
   </div>
@@ -395,52 +423,52 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
   <div class="fire-row">
     <div class="fire-track fire-right">
       <div class="fire-set">
-        <img src=https://image.tmdb.org/t/p/w500/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/trZTeHWcWDn6adkBBuSwfIhxAJn.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ntqRQBSHJRO26knmGTaOsMFwqFN.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/eCtD0KAa5rRNMnvB4KvLYD4ntRk.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/15SMnscZqd7HZ0bzruatOcKUlOV.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/abjNx4jqvaJn5UvsuLaBVRVndyJ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/d1ZcT5tHzUeQ7zgYecOVoWxH9FL.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/1jGPgDDcmg3Xgs3WO8sfYfbnFoA.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/m88fQoaNmGmHIzM3o21f6IrocTk.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/9ez0xyH6IIg8Ww4hNpiD9lHRRH7.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/vrChGRs0DsoCoaeHif8PlZY637Q.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/yCPGrd6fzbftuaH97OUS6tUdE4B.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/bw4L5fRn7LvxM73fMXfY4qa0RUi.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/nYkYmNFfKydgrcO45oNjOnW0FDJ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg">
-        <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_.jpg">
+        <img loading="lazy" fetchpriority="low" src=https://image.tmdb.org/t/p/w500/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/trZTeHWcWDn6adkBBuSwfIhxAJn.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ntqRQBSHJRO26knmGTaOsMFwqFN.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/eCtD0KAa5rRNMnvB4KvLYD4ntRk.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/15SMnscZqd7HZ0bzruatOcKUlOV.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/abjNx4jqvaJn5UvsuLaBVRVndyJ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/d1ZcT5tHzUeQ7zgYecOVoWxH9FL.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/1jGPgDDcmg3Xgs3WO8sfYfbnFoA.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/m88fQoaNmGmHIzM3o21f6IrocTk.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/9ez0xyH6IIg8Ww4hNpiD9lHRRH7.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/vrChGRs0DsoCoaeHif8PlZY637Q.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/yCPGrd6fzbftuaH97OUS6tUdE4B.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/bw4L5fRn7LvxM73fMXfY4qa0RUi.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/nYkYmNFfKydgrcO45oNjOnW0FDJ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_.jpg">
         
       </div>
 
       <div class="fire-set" aria-hidden="true">
-       <img src=https://image.tmdb.org/t/p/w500/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/trZTeHWcWDn6adkBBuSwfIhxAJn.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/ntqRQBSHJRO26knmGTaOsMFwqFN.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/eCtD0KAa5rRNMnvB4KvLYD4ntRk.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/15SMnscZqd7HZ0bzruatOcKUlOV.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/abjNx4jqvaJn5UvsuLaBVRVndyJ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/d1ZcT5tHzUeQ7zgYecOVoWxH9FL.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/1jGPgDDcmg3Xgs3WO8sfYfbnFoA.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/m88fQoaNmGmHIzM3o21f6IrocTk.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/9ez0xyH6IIg8Ww4hNpiD9lHRRH7.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/vrChGRs0DsoCoaeHif8PlZY637Q.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/yCPGrd6fzbftuaH97OUS6tUdE4B.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/bw4L5fRn7LvxM73fMXfY4qa0RUi.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/nYkYmNFfKydgrcO45oNjOnW0FDJ.jpg">
-        <img decoding="async" src="https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg">
-        <img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_.jpg">
+       <img loading="lazy" fetchpriority="low" src=https://image.tmdb.org/t/p/w500/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/pz7tsWxe0TTdfJnWPjZAEnrSl5M.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/trZTeHWcWDn6adkBBuSwfIhxAJn.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/ntqRQBSHJRO26knmGTaOsMFwqFN.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/eCtD0KAa5rRNMnvB4KvLYD4ntRk.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/15SMnscZqd7HZ0bzruatOcKUlOV.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/abjNx4jqvaJn5UvsuLaBVRVndyJ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/d1ZcT5tHzUeQ7zgYecOVoWxH9FL.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/1jGPgDDcmg3Xgs3WO8sfYfbnFoA.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/m88fQoaNmGmHIzM3o21f6IrocTk.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/9ez0xyH6IIg8Ww4hNpiD9lHRRH7.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/vrChGRs0DsoCoaeHif8PlZY637Q.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/yCPGrd6fzbftuaH97OUS6tUdE4B.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/bw4L5fRn7LvxM73fMXfY4qa0RUi.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/nYkYmNFfKydgrcO45oNjOnW0FDJ.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_.jpg">
       </div>
     </div>
   </div>
@@ -577,19 +605,19 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
     </p>
 
     <div class="fireplay-grid">
-      <div class="fireplay-card"><img src=https://fireplaytv.com/wp-content/uploads/2026/05/4A53D72F-AB80-4DC4-BBA3-FEE8D84A8DED.jpeg" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/p0m5wskq.jpg" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/premierleague-hero-new.png" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-165126.png" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/234908230.avif" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/brasileirao8.jpg" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" src=https://fireplaytv.com/wp-content/uploads/2026/05/4A53D72F-AB80-4DC4-BBA3-FEE8D84A8DED.jpeg" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/p0m5wskq.jpg" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/premierleague-hero-new.png" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-165126.png" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/234908230.avif" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/brasileirao8.jpg" alt=""></div>
 
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-165722.png" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Immagine-WhatsApp-2024-01-17-ore-19.13.35_af5214f3_50f733df-29c3-4f59-93a3-1ca89bcfd20f.png" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/sudamericana-750px_6.jpg" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-170413.png" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/i-come-across-fans-from-la-liga-serie-a-premier-l-who-say-v0-jjiqg8wccfgf1.jpg" alt=""></div>
-      <div class="fireplay-card"><img decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-170812.png" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-165722.png" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Immagine-WhatsApp-2024-01-17-ore-19.13.35_af5214f3_50f733df-29c3-4f59-93a3-1ca89bcfd20f.png" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/sudamericana-750px_6.jpg" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-170413.png" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/i-come-across-fans-from-la-liga-serie-a-premier-l-who-say-v0-jjiqg8wccfgf1.jpg" alt=""></div>
+      <div class="fireplay-card"><img loading="lazy" fetchpriority="low" decoding="async" src="https://fireplaytv.com/wp-content/uploads/2026/05/Captura-de-tela-2026-05-20-170812.png" alt=""></div>
     </div>
 
   </div>
@@ -925,7 +953,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 				</div>
 		<div class="elementor-element elementor-element-290190d e-con-full e-grid e-con e-child" data-id="290190d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 				<div class="elementor-element elementor-element-16fcadf1 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="16fcadf1" data-element_type="widget" data-widget_type="image.default">
-															<img decoding="async" width="460" height="133" src="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp" class="attachment-large size-large wp-image-52" alt="" srcset="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp 460w, https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX-300x87.webp 300w" sizes="(max-width: 460px) 100vw, 460px" />															</div>
+															<img loading="lazy" fetchpriority="low" decoding="async" width="460" height="133" src="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp" class="attachment-large size-large wp-image-52" alt="" srcset="https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX.webp 460w, https://fireplaytv.com/wp-content/uploads/2026/05/NETFLIX-300x87.webp 300w" sizes="(max-width: 460px) 100vw, 460px" />															</div>
 				<div class="elementor-element elementor-element-badf9f8 elementor-widget elementor-widget-text-editor" data-id="badf9f8" data-element_type="widget" data-widget_type="text-editor.default">
 									<p>R$ 49,90</p>								</div>
 				<div class="elementor-element elementor-element-5c13277a elementor-view-default elementor-widget elementor-widget-icon" data-id="5c13277a" data-element_type="widget" data-widget_type="icon.default">
@@ -937,7 +965,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 				</div>
 		<div class="elementor-element elementor-element-3f6459ec e-con-full e-grid e-con e-child" data-id="3f6459ec" data-element_type="container">
 				<div class="elementor-element elementor-element-2ba55ebd elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="2ba55ebd" data-element_type="widget" data-widget_type="image.default">
-															<img decoding="async" width="460" height="141" src="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp" class="attachment-large size-large wp-image-54" alt="" srcset="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp 460w, https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO-300x92.webp 300w" sizes="(max-width: 460px) 100vw, 460px" />															</div>
+															<img loading="lazy" fetchpriority="low" decoding="async" width="460" height="141" src="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp" class="attachment-large size-large wp-image-54" alt="" srcset="https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO.webp 460w, https://fireplaytv.com/wp-content/uploads/2026/05/PRIME-VIDEO-300x92.webp 300w" sizes="(max-width: 460px) 100vw, 460px" />															</div>
 				<div class="elementor-element elementor-element-7ebfe548 elementor-widget elementor-widget-text-editor" data-id="7ebfe548" data-element_type="widget" data-widget_type="text-editor.default">
 									<p>R$ 19,90</p>								</div>
 				<div class="elementor-element elementor-element-426c620c elementor-view-default elementor-widget elementor-widget-icon" data-id="426c620c" data-element_type="widget" data-widget_type="icon.default">
@@ -1472,7 +1500,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-10277cb8 e-con-full e-flex e-con e-child" data-id="10277cb8" data-element_type="container">
 				<div class="elementor-element elementor-element-44b0be5b elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="44b0be5b" data-element_type="widget" data-widget_type="image.default">
-															<img fetchpriority="high" decoding="async" width="946" height="295" src="https://i.postimg.cc/Jh6MTV1D/Chat-GPT-Image-20-de-mai-de-2026-18-41-03.png" class="attachment-large size-large wp-image-36" alt="" srcset="https://i.postimg.cc/Jh6MTV1D/Chat-GPT-Image-20-de-mai-de-2026-18-41-03.png 946w, https://fireplaytv.com/wp-content/uploads/2026/05/LOGO-300x94.webp 300w, https://fireplaytv.com/wp-content/uploads/2026/05/LOGO-768x239.webp 768w" sizes="(max-width: 946px) 100vw, 946px" />															</div>
+															<img loading="lazy" fetchpriority="low" fetchpriority="high" decoding="async" width="946" height="295" src="https://i.postimg.cc/Jh6MTV1D/Chat-GPT-Image-20-de-mai-de-2026-18-41-03.png" class="attachment-large size-large wp-image-36" alt="" srcset="https://i.postimg.cc/Jh6MTV1D/Chat-GPT-Image-20-de-mai-de-2026-18-41-03.png 946w, https://fireplaytv.com/wp-content/uploads/2026/05/LOGO-300x94.webp 300w, https://fireplaytv.com/wp-content/uploads/2026/05/LOGO-768x239.webp 768w" sizes="(max-width: 946px) 100vw, 946px" />															</div>
 				</div>
 		<div class="elementor-element elementor-element-77721e72 e-con-full e-flex e-con e-child" data-id="77721e72" data-element_type="container">
 				<div class="elementor-element elementor-element-4e7c70b1 elementor-widget elementor-widget-heading" data-id="4e7c70b1" data-element_type="widget" data-widget_type="heading.default">
@@ -1577,11 +1605,6 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 //# sourceURL=wp-block-template-skip-link-js-after
 </script>
 <script src="https://fireplaytv.com/wp-content/plugins/creame-whatsapp-me/public/js/joinchat.min.js?ver=6.2.1" id="joinchat-js" defer data-wp-strategy="defer" fetchpriority="low"></script>
-<script id="formlayer-frontend-js-extra">
-var formlayer_data = {"ajax_url":"https://fireplaytv.com/wp-admin/admin-ajax.php","nonce":"b7a157137a","messages":[],"is_pro":"1"};
-//# sourceURL=formlayer-frontend-js-extra
-</script>
-<script src="https://fireplaytv.com/wp-content/plugins/formlayer/assets/js/frontend.js?ver=1.0.3" id="formlayer-frontend-js"></script>
 <script src="https://fireplaytv.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.31.5" id="elementor-webpack-runtime-js"></script>
 <script src="https://fireplaytv.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.31.5" id="elementor-frontend-modules-js"></script>
 <script src="https://fireplaytv.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
