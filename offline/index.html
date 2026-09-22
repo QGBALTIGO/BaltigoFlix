@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Baltigo Offline: baixe animes, séries e filmes pelo Telegram e assista sem internet, onde quiser." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Baltigo Offline — Baixe uma vez. Assista onde quiser." />
+  <meta property="og:description" content="Mais de 155 mil episódios e conteúdos, qualidade máxima disponível, atualizações rápidas e acesso pelo Telegram." />
+  <title>Baltigo Offline — Baixe uma vez. Assista onde quiser.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0a0a0b;
+      --surface: #101012;
+      --surface-2: #151518;
+      --text: #f7f7f8;
+      --muted: #a7a7ad;
+      --line: rgba(255,255,255,.09);
+      --red: #ff233f;
+      --red-2: #c80825;
+      --red-soft: rgba(255,35,63,.12);
+      --gold: #ffc857;
+      --green: #4ade80;
+      --shadow: 0 24px 90px rgba(0,0,0,.55);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% -10%, rgba(255,35,63,.18), transparent 30%),
+        radial-gradient(circle at 92% 10%, rgba(255,35,63,.08), transparent 24%),
+        var(--bg);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .17;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, #000, transparent 70%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .section { padding: 96px 0; position: relative; }
+    .section-kicker { color: #ff697d; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .section-title { font-family: Sora, Inter, sans-serif; font-size: clamp(32px, 5vw, 58px); line-height: 1.02; letter-spacing: -.04em; margin: 12px 0 16px; }
+    .section-copy { color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 720px; }
+
+    .announcement {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffdce1;
+      background: linear-gradient(90deg, #7b0719, #b70a27 45%, #7b0719);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      text-align: center;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: rgba(5,5,5,.76);
+      backdrop-filter: blur(18px);
+    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: Sora, Inter, sans-serif; font-weight: 800; letter-spacing: -.04em; font-size: 20px; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(145deg, var(--red), #8c061c); box-shadow: 0 0 28px rgba(255,35,63,.32); font-size: 17px; }
+    .brand span:last-child em { font-style: normal; color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 26px; color: #c7c7cc; font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: white; }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--red), var(--red-2)); box-shadow: 0 16px 42px rgba(255,35,63,.22); color: white; }
+    .btn-primary:hover { box-shadow: 0 18px 52px rgba(255,35,63,.34); }
+    .btn-secondary { background: rgba(255,255,255,.04); border-color: var(--line); color: white; }
+    .btn-sm { min-height: 42px; padding: 0 17px; border-radius: 12px; font-size: 13px; }
+
+    .hero { padding: 76px 0 56px; min-height: 760px; display: flex; align-items: center; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 54px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border-radius: 999px; background: var(--red-soft); border: 1px solid rgba(255,35,63,.2); color: #ff8596; font-size: 13px; font-weight: 800; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 0 rgba(255,35,63,.5); animation: pulse 1.8s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(255,35,63,0); } 100% { box-shadow: 0 0 0 0 rgba(255,35,63,0); } }
+    .hero h1 { font-family: Sora, Inter, sans-serif; font-size: clamp(48px, 7vw, 82px); line-height: .98; letter-spacing: -.055em; margin: 22px 0; max-width: 780px; }
+    .hero h1 .gradient { background: linear-gradient(90deg, #fff 5%, #ff8394 55%, var(--red) 100%); -webkit-background-clip: text; color: transparent; }
+    .hero-copy { color: #b9b9c0; max-width: 680px; font-size: clamp(17px, 2vw, 20px); line-height: 1.65; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 25px; color: #d3d3d7; font-size: 13px; font-weight: 700; }
+    .trust-row span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust-row i { font-style: normal; color: var(--green); }
+
+    .device-stage { position: relative; min-height: 560px; display: grid; place-items: center; }
+    .device-glow { position: absolute; width: 82%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,35,63,.22), transparent 65%); filter: blur(14px); }
+    .phone {
+      width: min(360px, 82vw);
+      min-height: 566px;
+      border-radius: 38px;
+      padding: 12px;
+      background: linear-gradient(155deg, #33343a, #09090a 50%, #24252a);
+      box-shadow: 0 46px 120px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.07);
+      transform: rotate(3deg);
+      position: relative;
+      z-index: 2;
+    }
+    .phone-screen { min-height: 542px; border-radius: 30px; overflow: hidden; position: relative; background: #08080a; border: 1px solid rgba(255,255,255,.06); }
+    .phone-top { height: 42px; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #bfc0c5; }
+    .notch { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 92px; height: 24px; border-radius: 20px; background: #000; }
+    .app-head { padding: 10px 18px 16px; display: flex; justify-content: space-between; align-items: center; }
+    .app-title { font-weight: 900; font-size: 18px; }
+    .app-title b { color: var(--red); }
+    .search-pill { width: 34px; height: 34px; border-radius: 12px; background: #16161a; display: grid; place-items: center; }
+    .mock-cover { margin: 0 14px; height: 218px; border-radius: 22px; position: relative; overflow: hidden; background:
+      radial-gradient(circle at 72% 30%, rgba(255,255,255,.2), transparent 10%),
+      linear-gradient(135deg, #4a0714 0 26%, #0f1015 26% 43%, #bc0d2d 43% 54%, #191a22 54% 70%, #5d0a18 70% 100%);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .mock-cover::after { content: "BALTIGO\A OFFLINE"; white-space: pre; position: absolute; left: 18px; bottom: 18px; font: 800 29px/1 Sora, sans-serif; letter-spacing: -.05em; }
+    .quality { position: absolute; top: 14px; left: 14px; padding: 6px 9px; border-radius: 8px; background: rgba(0,0,0,.72); border: 1px solid rgba(255,255,255,.11); font-size: 10px; font-weight: 900; }
+    .offline-tag { position: absolute; right: 14px; top: 14px; padding: 6px 9px; border-radius: 8px; background: var(--red); font-size: 10px; font-weight: 900; }
+    .episode { margin: 18px; }
+    .episode small { color: #87878f; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; }
+    .episode h3 { margin: 6px 0 7px; font-size: 15px; }
+    .episode p { margin: 0; color: #8f9098; font-size: 11px; line-height: 1.5; }
+    .download-card { margin: 14px 18px; padding: 14px; border-radius: 16px; background: #121216; border: 1px solid rgba(255,255,255,.07); }
+    .download-head { display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; margin-bottom: 10px; }
+    .bar { height: 7px; border-radius: 999px; background: #27272d; overflow: hidden; }
+    .bar span { display: block; height: 100%; width: 88%; border-radius: inherit; background: linear-gradient(90deg, #9f0922, var(--red)); position: relative; }
+    .bar span::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.38), transparent); transform: translateX(-100%); animation: shimmer 2s infinite; }
+    @keyframes shimmer { to { transform: translateX(100%); } }
+    .download-meta { margin-top: 8px; display: flex; justify-content: space-between; color: #85858d; font-size: 9px; }
+    .offline-ready { display: flex; align-items: center; gap: 8px; margin: 12px 18px 0; padding: 11px 13px; border-radius: 14px; color: #dfffe9; background: rgba(74,222,128,.08); border: 1px solid rgba(74,222,128,.18); font-size: 10px; font-weight: 800; }
+
+    .float-card { position: absolute; z-index: 3; padding: 14px 16px; border-radius: 16px; background: rgba(16,16,18,.88); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(16px); box-shadow: var(--shadow); font-size: 12px; font-weight: 800; }
+    .float-card small { display: block; color: #8d8e95; font-weight: 600; margin-top: 3px; }
+    .float-one { left: -10px; top: 120px; transform: rotate(-4deg); }
+    .float-two { right: -4px; bottom: 110px; transform: rotate(4deg); }
+
+    .stats { padding: 22px 0 10px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: rgba(255,255,255,.025); }
+    .stat { padding: 28px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat strong { display: block; font: 800 clamp(25px, 3vw, 37px)/1 Sora, sans-serif; letter-spacing: -.05em; }
+    .stat span { display: block; color: var(--muted); margin-top: 8px; font-size: 12px; line-height: 1.4; }
+
+    .usecases-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 36px; }
+    .usecase { min-height: 190px; padding: 24px; border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.018)); transition: transform .25s ease, border-color .25s ease; }
+    .usecase:hover { transform: translateY(-5px); border-color: rgba(255,35,63,.35); }
+    .usecase .emoji { font-size: 30px; }
+    .usecase h3 { font-size: 17px; margin: 22px 0 8px; }
+    .usecase p { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }
+
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 36px; counter-reset: step; }
+    .step { counter-increment: step; padding: 28px; border-radius: 24px; background: #0d0d0f; border: 1px solid var(--line); position: relative; overflow: hidden; }
+    .step::before { content: "0" counter(step); position: absolute; right: 18px; top: 10px; font: 800 54px/1 Sora, sans-serif; color: rgba(255,255,255,.045); }
+    .step-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; background: var(--red-soft); color: var(--red); font-size: 21px; }
+    .step h3 { margin: 22px 0 8px; }
+    .step p { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0; }
+
+    .benefits-wrap { margin-top: 36px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .benefit-main, .benefit-stack > div { border-radius: 26px; border: 1px solid var(--line); background: linear-gradient(145deg, #111114, #09090b); }
+    .benefit-main { padding: 34px; min-height: 490px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; }
+    .benefit-main::after { content: "∞"; position: absolute; right: -25px; bottom: -75px; color: rgba(255,35,63,.12); font: 800 260px/1 Sora, sans-serif; }
+    .benefit-icon { width: 50px; height: 50px; display: grid; place-items: center; border-radius: 16px; background: var(--red); font-size: 23px; box-shadow: 0 15px 40px rgba(255,35,63,.22); }
+    .benefit-main h3 { font: 800 34px/1.05 Sora, sans-serif; letter-spacing: -.04em; margin: 20px 0 12px; max-width: 520px; }
+    .benefit-main p { color: var(--muted); line-height: 1.7; max-width: 560px; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 2; }
+    .chip { padding: 8px 11px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); color: #d0d0d4; font-size: 11px; font-weight: 800; }
+    .benefit-stack { display: grid; grid-template-rows: repeat(2, 1fr); gap: 18px; }
+    .benefit-stack > div { padding: 29px; }
+    .benefit-stack h3 { font-size: 21px; margin: 17px 0 8px; }
+    .benefit-stack p { color: var(--muted); font-size: 14px; line-height: 1.65; margin: 0; }
+
+    .pricing-section { background: linear-gradient(180deg, transparent, rgba(255,35,63,.035), transparent); }
+    .pricing-intro { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+    .pricing-note { max-width: 370px; padding: 13px 16px; border: 1px solid rgba(255,200,87,.2); background: rgba(255,200,87,.06); border-radius: 15px; color: #ffe6a9; font-size: 12px; line-height: 1.5; }
+    .plans { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; margin-top: 36px; align-items: stretch; }
+    .plan { padding: 24px 20px; border-radius: 24px; border: 1px solid var(--line); background: linear-gradient(160deg, #121215, #09090a); position: relative; display: flex; flex-direction: column; min-height: 520px; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .plan:hover { transform: translateY(-6px); border-color: rgba(255,35,63,.35); }
+    .plan.featured { border-color: rgba(255,35,63,.58); box-shadow: 0 24px 75px rgba(255,35,63,.12); }
+    .plan.lifetime { background: radial-gradient(circle at 70% 0, rgba(255,255,255,.08), transparent 35%), linear-gradient(160deg, #151519, #080809); }
+    .badge { position: absolute; top: -11px; left: 18px; padding: 6px 10px; border-radius: 999px; background: var(--red); color: white; font-size: 10px; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
+    .plan-tier { display: flex; justify-content: space-between; align-items: center; }
+    .tier-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: #1c1c20; font-size: 20px; }
+    .plan h3 { font: 800 20px/1 Sora, sans-serif; margin: 18px 0 5px; }
+    .plan-duration { color: var(--muted); font-size: 12px; }
+    .price { margin: 22px 0; display: flex; align-items: flex-end; gap: 4px; }
+    .price .currency { align-self: flex-start; color: #c2c2c8; font-size: 13px; margin-top: 7px; }
+    .price strong { font: 800 40px/1 Sora, sans-serif; letter-spacing: -.055em; }
+    .price small { color: #8f8f96; margin-bottom: 3px; font-size: 10px; }
+    .plan ul { list-style: none; padding: 0; margin: 4px 0 22px; display: grid; gap: 11px; flex: 1; }
+    .plan li { display: flex; align-items: flex-start; gap: 8px; color: #d6d6da; font-size: 12px; line-height: 1.45; }
+    .plan li::before { content: "✓"; color: var(--green); font-weight: 900; }
+    .plan li.no { color: #77777e; }
+    .plan li.no::before { content: "—"; color: #77777e; }
+    .plan .btn { width: 100%; }
+    .plan-foot { color: #6e6e74; font-size: 9px; text-align: center; margin-top: 10px; }
+
+    .coxinha { margin-top: 24px; padding: 22px 24px; border: 1px solid rgba(255,255,255,.08); border-radius: 22px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: linear-gradient(90deg, rgba(255,35,63,.11), rgba(255,255,255,.025)); }
+    .coxinha-copy { display: flex; gap: 16px; align-items: center; }
+    .coxinha-emoji { font-size: 38px; }
+    .coxinha strong { display: block; font-size: 18px; }
+    .coxinha span { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+    .compare { margin-top: 24px; overflow-x: auto; border: 1px solid var(--line); border-radius: 22px; background: #0b0b0d; }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; }
+    th, td { padding: 17px 18px; text-align: center; border-bottom: 1px solid var(--line); font-size: 12px; }
+    th:first-child, td:first-child { text-align: left; }
+    th { color: white; font-size: 11px; letter-spacing: .02em; background: rgba(255,255,255,.025); }
+    td { color: #c4c4ca; }
+    tr:last-child td { border-bottom: 0; }
+    .yes { color: var(--green); font-weight: 900; }
+    .nope { color: #66666d; }
+
+    .faq { max-width: 900px; margin: 38px auto 0; display: grid; gap: 10px; }
+    .faq-item { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: rgba(255,255,255,.022); }
+    .faq-q { width: 100%; padding: 20px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; color: white; background: transparent; border: 0; text-align: left; font: 700 14px/1.4 Inter, sans-serif; cursor: pointer; }
+    .faq-q span:last-child { width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 10px; background: rgba(255,255,255,.05); transition: transform .25s ease; }
+    .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+    .faq-a > div { overflow: hidden; }
+    .faq-a p { margin: 0; padding: 0 22px 20px; color: var(--muted); line-height: 1.7; font-size: 13px; }
+    .faq-item.open .faq-a { grid-template-rows: 1fr; }
+    .faq-item.open .faq-q span:last-child { transform: rotate(45deg); }
+
+    .final-cta { padding: 44px; border-radius: 32px; border: 1px solid rgba(255,35,63,.24); background:
+      radial-gradient(circle at 80% 30%, rgba(255,35,63,.2), transparent 27%),
+      linear-gradient(135deg, #151014, #080809 62%);
+      display: flex; align-items: center; justify-content: space-between; gap: 34px; overflow: hidden; position: relative;
+    }
+    .final-cta h2 { font: 800 clamp(30px, 5vw, 54px)/1.02 Sora, sans-serif; letter-spacing: -.045em; margin: 0 0 12px; max-width: 760px; }
+    .final-cta p { margin: 0; color: var(--muted); line-height: 1.65; max-width: 650px; }
+    .final-actions { display: grid; gap: 10px; min-width: 230px; }
+
+    footer { padding: 38px 0 50px; border-top: 1px solid var(--line); color: #7d7d84; font-size: 11px; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 28px; align-items: flex-start; }
+    .legal { max-width: 750px; line-height: 1.65; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 14px; justify-content: flex-end; }
+
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 140%); width: min(470px, calc(100% - 28px)); padding: 15px 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: rgba(18,18,21,.96); box-shadow: var(--shadow); z-index: 100; transition: transform .3s ease; display: flex; gap: 11px; align-items: flex-start; }
+    .toast.show { transform: translate(-50%, 0); }
+    .toast strong { font-size: 13px; display: block; margin-bottom: 3px; }
+    .toast span { color: var(--muted); font-size: 11px; line-height: 1.4; }
+
+    @media (max-width: 1050px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 62px; }
+      .hero-copy { max-width: 760px; }
+      .device-stage { min-height: 610px; }
+      .float-one { left: 12%; }
+      .float-two { right: 12%; }
+      .plans { grid-template-columns: repeat(2,1fr); gap: 16px; }
+      .usecases-grid { grid-template-columns: repeat(2,1fr); }
+      .benefits-wrap { grid-template-columns: 1fr; }
+      .benefit-stack { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
+      .pricing-intro { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 780px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .section { padding: 72px 0; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .steps { grid-template-columns: 1fr; }
+      .final-cta { align-items: flex-start; flex-direction: column; padding: 32px 26px; }
+      .final-actions { width: 100%; min-width: 0; grid-template-columns: 1fr 1fr; }
+      .footer-grid { flex-direction: column; }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (max-width: 590px) {
+      .container { width: min(var(--max), calc(100% - 26px)); }
+      .announcement { font-size: 11px; }
+      nav { min-height: 64px; }
+      .nav-cta { display: none; }
+      .hero { padding: 45px 0 28px; min-height: 0; }
+      .hero h1 { font-size: clamp(43px, 13vw, 62px); }
+      .hero-actions .btn { width: 100%; }
+      .trust-row { gap: 10px 14px; }
+      .device-stage { min-height: 540px; transform: scale(.92); margin: -20px 0; }
+      .float-one { left: -4px; top: 90px; }
+      .float-two { right: -4px; bottom: 80px; }
+      .stats-grid { border-radius: 18px; }
+      .stat { padding: 20px; }
+      .usecases-grid { grid-template-columns: 1fr; }
+      .usecase { min-height: 0; }
+      .benefit-main { min-height: 430px; padding: 26px; }
+      .benefit-stack { grid-template-columns: 1fr; }
+      .plans { grid-template-columns: 1fr; }
+      .plan { min-height: 0; padding: 25px 22px; }
+      .coxinha { align-items: flex-start; flex-direction: column; }
+      .coxinha .btn { width: 100%; }
+      .final-actions { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">📥 Modo offline pelo Telegram • Baixe, salve e assista sem depender da internet</div>
+
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Navegação principal">
+      <a class="brand" href="#top" aria-label="Baltigo Offline, início">
+        <span class="brand-mark">B</span>
+        <span>Baltigo <em>Offline</em></span>
+      </a>
+      <div class="nav-links">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="#planos">Ver planos</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Entretenimento que vai com você</div>
+          <h1>Baixe uma vez.<br><span class="gradient">Assista onde quiser.</span></h1>
+          <p class="hero-copy">Leve seus animes, séries e filmes para onde a internet não chega. Baixe pelo Telegram, salve no seu dispositivo e assista no trabalho, na viagem, no ônibus, na TV ou onde você preferir.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planos">🔥 Quero assistir offline</a>
+            <a class="btn btn-secondary" href="#como-funciona">▶ Ver como funciona</a>
+          </div>
+          <div class="trust-row">
+            <span><i>✓</i> Downloads sem limite</span>
+            <span><i>✓</i> Melhor qualidade disponível</span>
+            <span><i>✓</i> Dublado e legendado</span>
+            <span><i>✓</i> Sem limite de dispositivos</span>
+          </div>
+        </div>
+
+        <div class="device-stage" aria-label="Demonstração visual do Baltigo Offline">
+          <div class="device-glow"></div>
+          <div class="float-card float-one">⚡ Novo episódio<small>Disponível em até 24h</small></div>
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="notch"></div>
+              <div class="phone-top"><span>09:41</span><span>●●● 100%</span></div>
+              <div class="app-head"><div class="app-title">Baltigo <b>Offline</b></div><div class="search-pill">⌕</div></div>
+              <div class="mock-cover"><span class="quality">FHD • MAX</span><span class="offline-tag">OFFLINE</span></div>
+              <div class="episode">
+                <small>Preparando para assistir sem internet</small>
+                <h3>Episódio salvo no dispositivo</h3>
+                <p>Depois de baixar, é só abrir e assistir. Sem depender do sinal.</p>
+              </div>
+              <div class="download-card">
+                <div class="download-head"><span>↓ Download</span><span>88%</span></div>
+                <div class="bar"><span></span></div>
+                <div class="download-meta"><span>Qualidade máxima</span><span>Telegram</span></div>
+              </div>
+              <div class="offline-ready">✓ Pronto para assistir offline</div>
+            </div>
+          </div>
+          <div class="float-card float-two">📺 Leve para a TV<small>Espelhe a tela ou reproduza o arquivo</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>155 mil+</strong><span>episódios e conteúdos no acervo combinado</span></div>
+        <div class="stat"><strong>25 mil+</strong><span>episódios de anime, incluindo dublados e legendados</span></div>
+        <div class="stat"><strong>130 mil+</strong><span>episódios e conteúdos entre séries e filmes</span></div>
+        <div class="stat"><strong>&lt; 24h</strong><span>meta de disponibilidade para novos episódios</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <span class="section-kicker">Simples de verdade</span>
+        <h2 class="section-title">Do Telegram para o seu bolso.</h2>
+        <p class="section-copy">Nada de depender de Wi‑Fi ruim ou gastar seu pacote de dados o tempo todo. Você escolhe, baixa e leva o conteúdo com você.</p>
+
+        <div class="steps">
+          <article class="step"><div class="step-icon">🔎</div><h3>1. Escolha o que assistir</h3><p>Encontre animes, séries, filmes, episódios dublados e legendados pelo ecossistema Baltigo no Telegram.</p></article>
+          <article class="step"><div class="step-icon">📥</div><h3>2. Baixe e salve</h3><p>Faça o download na melhor qualidade disponível e mantenha o arquivo no celular, tablet, notebook ou outro dispositivo.</p></article>
+          <article class="step"><div class="step-icon">✈️</div><h3>3. Assista sem internet</h3><p>Trabalho, estrada, viagem, interior, ônibus ou avião. Depois de salvo, seu episódio não depende da sua conexão.</p></article>
+        </div>
+
+        <div class="usecases-grid">
+          <article class="usecase"><div class="emoji">🏢</div><h3>No trabalho</h3><p>Para intervalos e lugares onde o Wi‑Fi é bloqueado, lento ou simplesmente não existe.</p></article>
+          <article class="usecase"><div class="emoji">🚌</div><h3>Na estrada</h3><p>Baixe antes de sair e continue sua maratona mesmo atravessando áreas sem sinal.</p></article>
+          <article class="usecase"><div class="emoji">📺</div><h3>Na sua TV</h3><p>Espelhe a tela ou reproduza arquivos compatíveis em outros dispositivos.</p></article>
+          <article class="usecase"><div class="emoji">📱</div><h3>Em qualquer tela</h3><p>Sem limite de dispositivos para você organizar seus downloads nos aparelhos que usa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container">
+        <span class="section-kicker">Muito além do download</span>
+        <h2 class="section-title">Uma assinatura para quem realmente assiste.</h2>
+        <p class="section-copy">O Baltigo Offline foi pensado para reduzir fricção: mais catálogo, mais liberdade, melhor qualidade e novidades entrando continuamente.</p>
+
+        <div class="benefits-wrap">
+          <article class="benefit-main">
+            <div>
+              <div class="benefit-icon">∞</div>
+              <h3>Baixe sem ficar contando limite.</h3>
+              <p>Organize sua própria biblioteca offline nos seus dispositivos. Baixe episódios para uma viagem inteira, uma temporada completa ou só o que pretende ver hoje.</p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Downloads ilimitados</span>
+              <span class="chip">Sem limite de aparelhos</span>
+              <span class="chip">Qualidade máxima</span>
+              <span class="chip">Dublado</span>
+              <span class="chip">Legendado</span>
+              <span class="chip">Telegram</span>
+            </div>
+          </article>
+          <div class="benefit-stack">
+            <article><div class="benefit-icon">⚡</div><h3>Atualização automática</h3><p>Saiu episódio novo? A meta é disponibilizá-lo em menos de 24 horas, sem você precisar ficar caçando em vários lugares.</p></article>
+            <article><div class="benefit-icon">👑</div><h3>Pedidos prioritários</h3><p>Ouro e Diamante podem solicitar títulos e episódios sem limite de pedidos. Esses pedidos entram com prioridade. O plano Bronze não inclui esse benefício.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="planos">
+      <div class="container">
+        <div class="pricing-intro">
+          <div>
+            <span class="section-kicker">Escolha seu acesso</span>
+            <h2 class="section-title">Começa por R$ 7,90.</h2>
+            <p class="section-copy">Todos os planos liberam o mesmo catálogo e o modo offline. O que muda é o período de acesso — e o Bronze não inclui pedidos prioritários.</p>
+          </div>
+          <div class="pricing-note">💡 Os botões de pagamento já estão preparados. Basta inserir os seus links de checkout no bloco de configuração no final do arquivo.</div>
+        </div>
+
+        <div class="plans">
+          <article class="plan">
+            <div class="plan-tier"><div class="tier-icon">🥉</div></div>
+            <h3>Bronze Semanal</h3><div class="plan-duration">7 dias de acesso</div>
+            <div class="price"><span class="currency">R$</span><strong>7,90</strong><small>/ 7 dias</small></div>
+            <ul>
+              <li>Catálogo completo</li><li>Downloads ilimitados</li><li>Melhor qualidade disponível</li><li>Dublado e legendado</li><li>Sem limite de dispositivos</li><li>Atualizações automáticas</li><li class="no">Pedidos prioritários</li>
+            </ul>
+            <a class="btn btn-secondary checkout" href="#" data-plan="bronze">Começar por R$ 7,90</a>
+            <div class="plan-foot">Link de checkout pendente</div>
+          </article>
+
+          <article class="plan featured">
+            <span class="badge">Ótimo para começar</span>
+            <div class="plan-tier"><div class="tier-icon">🥇</div></div>
+            <h3>Ouro Mensal</h3><div class="plan-duration">30 dias de acesso</div>
+            <div class="price"><span class="currency">R$</span><strong>17,90</strong><small>/ 30 dias</small></div>
+            <ul>
+              <li>Catálogo completo</li><li>Downloads ilimitados</li><li>Melhor qualidade disponível</li><li>Dublado e legendado</li><li>Sem limite de dispositivos</li><li>Atualizações automáticas</li><li>Pedidos prioritários ilimitados</li>
+            </ul>
+            <a class="btn btn-primary checkout" href="#" data-plan="ouro">Assinar Ouro</a>
+            <div class="plan-foot">Link de checkout pendente</div>
+          </article>
+
+          <article class="plan">
+            <div class="plan-tier"><div class="tier-icon">💎</div></div>
+            <h3>Diamante Anual</h3><div class="plan-duration">365 dias de acesso</div>
+            <div class="price"><span class="currency">R$</span><strong>79,90</strong><small>/ ano</small></div>
+            <ul>
+              <li>Catálogo completo</li><li>Downloads ilimitados</li><li>Melhor qualidade disponível</li><li>Dublado e legendado</li><li>Sem limite de dispositivos</li><li>Atualizações automáticas</li><li>Pedidos prioritários ilimitados</li>
+            </ul>
+            <a class="btn btn-secondary checkout" href="#" data-plan="anual">Assinar Diamante</a>
+            <div class="plan-foot">Link de checkout pendente</div>
+          </article>
+
+          <article class="plan lifetime">
+            <span class="badge">Sem vencimento</span>
+            <div class="plan-tier"><div class="tier-icon">♾️</div></div>
+            <h3>Diamante Vitalício</h3><div class="plan-duration">Acesso vitalício</div>
+            <div class="price"><span class="currency">R$</span><strong>249,90</strong><small>/ uma vez</small></div>
+            <ul>
+              <li>Catálogo completo</li><li>Downloads ilimitados</li><li>Melhor qualidade disponível</li><li>Dublado e legendado</li><li>Sem limite de dispositivos</li><li>Novidades e atualizações</li><li>Pedidos prioritários ilimitados</li>
+            </ul>
+            <a class="btn btn-secondary checkout" href="#" data-plan="vitalicio">Quero acesso vitalício</a>
+            <div class="plan-foot">Link de checkout pendente</div>
+          </article>
+        </div>
+
+        <div class="coxinha">
+          <div class="coxinha-copy"><div class="coxinha-emoji">🥟</div><div><strong>O preço de uma coxinha. Sete dias de entretenimento.</strong><span>Por R$ 7,90 você testa o Baltigo Offline por uma semana inteira e decide se faz sentido para a sua rotina.</span></div></div>
+          <a class="btn btn-primary checkout" href="#" data-plan="bronze">Testar por R$ 7,90</a>
+        </div>
+
+        <div class="compare" aria-label="Comparação dos planos">
+          <table>
+            <thead><tr><th>Benefício</th><th>Bronze</th><th>Ouro</th><th>Diamante Anual</th><th>Vitalício</th></tr></thead>
+            <tbody>
+              <tr><td>Acesso ao catálogo</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Downloads ilimitados</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Qualidade máxima disponível</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Sem limite de dispositivos</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Pedidos prioritários ilimitados</td><td class="nope">—</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Período</td><td>7 dias</td><td>30 dias</td><td>365 dias</td><td>Vitalício</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div style="text-align:center; max-width:760px; margin:0 auto;">
+          <span class="section-kicker">Sem dúvida escondida</span>
+          <h2 class="section-title">Perguntas frequentes.</h2>
+          <p class="section-copy" style="margin-inline:auto;">Tudo o que alguém precisa saber antes de assinar.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item open"><button class="faq-q"><span>O que é o Baltigo Offline?</span><span>+</span></button><div class="faq-a"><div><p>É o modo de acesso da Baltigo voltado para quem quer baixar animes, séries e filmes pelo Telegram, salvar nos próprios dispositivos e assistir depois sem depender de conexão com a internet.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Preciso de internet para assistir?</span><span>+</span></button><div class="faq-a"><div><p>Você precisa de internet para localizar e baixar o arquivo. Depois que o conteúdo estiver salvo no dispositivo, pode reproduzi-lo offline.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Funciona em Android, iPhone, PC e TV?</span><span>+</span></button><div class="faq-a"><div><p>O acesso principal é pelo Telegram, disponível em celular e computador. Arquivos baixados podem ser reproduzidos em dispositivos compatíveis e você também pode usar recursos de espelhamento para a TV quando o aparelho permitir.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Qual qualidade dos episódios?</span><span>+</span></button><div class="faq-a"><div><p>A prioridade é disponibilizar a melhor qualidade existente para aquele arquivo. A resolução final varia de acordo com a fonte e o lançamento específico.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Tem conteúdo dublado e legendado?</span><span>+</span></button><div class="faq-a"><div><p>Sim. O catálogo reúne opções dubladas e legendadas quando disponíveis, tanto para animes quanto para outras produções.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Quantos aparelhos posso usar?</span><span>+</span></button><div class="faq-a"><div><p>Não há limite de dispositivos informado para organizar e reproduzir seus downloads. A compatibilidade de cada arquivo depende do dispositivo e do aplicativo usado para reprodução.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Posso pedir uma série, anime, filme ou episódio?</span><span>+</span></button><div class="faq-a"><div><p>Nos planos Ouro e Diamante, sim: os pedidos são ilimitados e entram como prioritários. O plano Bronze não inclui pedidos prioritários.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Quando um episódio novo entra no catálogo?</span><span>+</span></button><div class="faq-a"><div><p>O sistema é atualizado continuamente. A meta é que um episódio recém-lançado esteja disponível em menos de 24 horas, quando o arquivo estiver disponível para inclusão.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>O plano vitalício expira?</span><span>+</span></button><div class="faq-a"><div><p>Não. O Diamante Vitalício é vendido como acesso sem prazo de expiração ao Baltigo Offline, conforme as condições apresentadas no momento da compra.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>O que acontece quando meu plano por período termina?</span><span>+</span></button><div class="faq-a"><div><p>O acesso online da assinatura segue o período contratado. As condições de renovação serão apresentadas no checkout. Arquivos que já estejam salvos localmente continuam sujeitos ao funcionamento e às regras do dispositivo onde foram armazenados.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Existe conteúdo para maiores de 18 anos?</span><span>+</span></button><div class="faq-a"><div><p>Algumas categorias podem conter conteúdo adulto. Quando disponibilizadas, são destinadas exclusivamente a maiores de 18 anos e devem respeitar as regras aplicáveis ao serviço e à plataforma utilizada.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q"><span>Como recebo ajuda?</span><span>+</span></button><div class="faq-a"><div><p>Use o botão de suporte no final da página. Ele pode ser configurado para abrir diretamente o atendimento oficial da Baltigo no Telegram.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:34px;">
+      <div class="container">
+        <div class="final-cta">
+          <div><h2>Internet acabou.<br>Sua maratona não precisa acabar.</h2><p>Escolha seu plano, baixe o que quer assistir e leve a Baltigo com você.</p></div>
+          <div class="final-actions"><a class="btn btn-primary" href="#planos">Ver planos</a><a class="btn btn-secondary" id="supportLink" href="https://t.me/QGSuporteBot" target="_blank" rel="noopener">Falar com suporte</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="legal"><div class="brand" style="margin-bottom:13px;"><span class="brand-mark">B</span><span>Baltigo <em>Offline</em></span></div><div>© <span id="year"></span> Baltigo. O catálogo, disponibilidade, resolução e prazos podem variar. A Baltigo deve disponibilizar apenas conteúdos para os quais possua autorização, licença ou outro fundamento jurídico aplicável. Conteúdos classificados como adultos são destinados exclusivamente a maiores de 18 anos.</div></div>
+      <div class="footer-links"><a href="#planos">Planos</a><a href="#faq">FAQ</a><a href="https://t.me/QGSuporteBot" target="_blank" rel="noopener">Suporte</a></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><div>🔗</div><div><strong>Checkout ainda não configurado</strong><span>Substitua o link deste plano no objeto CONFIG.checkout no final do arquivo.</span></div></div>
+
+  <script>
+    // ===== CONFIGURAÇÃO RÁPIDA =====
+    // Cole os links reais de checkout entre as aspas.
+    const CONFIG = {
+      checkout: {
+        bronze: "",
+        ouro: "",
+        anual: "",
+        vitalicio: ""
+      },
+      support: "https://t.me/QGSuporteBot"
+    };
+
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast() {
+      clearTimeout(toastTimer);
+      toast.classList.add('show');
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3600);
+    }
+
+    document.querySelectorAll('.checkout').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const plan = button.dataset.plan;
+        const url = CONFIG.checkout[plan];
+        if (!url) {
+          event.preventDefault();
+          showToast();
+          return;
+        }
+        button.href = url;
+      });
+    });
+
+    document.querySelectorAll('.faq-q').forEach((button) => {
+      button.addEventListener('click', () => {
+        button.closest('.faq-item').classList.toggle('open');
+      });
+    });
+
+    document.getElementById('supportLink').href = CONFIG.support;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
