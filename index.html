@@ -34,8 +34,8 @@ img{display:block}
 .skip-link:focus{top:12px}
 .site-header{position:sticky;z-index:80;top:0;background:rgba(9,8,16,.94);border-bottom:1px solid rgba(255,145,44,.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px}
-.brand{display:flex;align-items:center;flex-shrink:0}
-.brand img{width:173px;height:58px;object-fit:contain;object-position:left center}
+.brand{position:relative;display:block;flex:none;overflow:hidden;width:165px;height:50px}
+.brand img{position:absolute;top:-28px;left:0;width:229px;height:153px;max-width:none;object-fit:contain}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a:not(.btn){font-size:14px;font-weight:700;color:#d5d1da}
 .nav a:not(.btn):hover{color:var(--orange)}
@@ -141,7 +141,8 @@ h1 .highlight,.gradient-text{background:linear-gradient(110deg,#ffc04a 4%,#ff863
 @media(max-width:720px){
 .wrap{width:min(100% - 32px,1160px)}
 .header-inner{min-height:65px;gap:10px}
-.brand img{width:137px;height:44px}
+.brand{width:136px;height:42px}
+.brand img{top:-23px;left:0;width:190px;height:127px}
 .nav a:not(.btn){display:none}
 .btn-small{min-height:40px;padding:10px 17px;font-size:12px}
 .hero-inner{grid-template-columns:1fr;gap:33px;padding-top:38px;padding-bottom:55px}
@@ -170,7 +171,8 @@ h1 .highlight,.gradient-text{background:linear-gradient(110deg,#ffc04a 4%,#ff863
 .sport-card .symbol{font-size:24px}
 .sport-card strong{font-size:14px}
 .sport-card span{font-size:12px}
-.guarantee{padding:19px;gap:12px}
+.guarantee{display:grid;grid-template-columns:auto minmax(0,1fr);padding:19px;gap:12px}
+.guarantee>a{grid-column:1/-1;width:100%}
 .guarantee .seal{font-size:28px}
 .guarantee h3{font-size:17px}
 .guarantee p{font-size:13px}
